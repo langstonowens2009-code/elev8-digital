@@ -36,7 +36,7 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 ELEV8 DIGITAL server running at http://localhost:${PORT}`);
+  console.log(`🚀 ELEV8vx server running at http://localhost:${PORT}`);
   if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY.includes('your_resend_api_key')) {
     console.warn(`⚠️ Warning: RESEND_API_KEY is not set yet in .env! Get one at https://resend.com/api-keys`);
   } else {

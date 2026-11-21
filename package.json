@@ -2,7 +2,7 @@
   "name": "lowens-web",
   "version": "1.0.0",
   "type": "module",
-  "description": "ELEV8 DIGITAL — Elevate Your Digital Presence. Web Development · Software · AI Solutions",
+  "description": "ELEV8vx — Elevate Your Digital Presence. Web Development · Software · AI Solutions",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

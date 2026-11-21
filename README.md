@@ -1,4 +1,4 @@
-# ELEV8 DIGITAL — Official Website & Platform
+# ELEV8vx — Official Website & Platform
 
 **Elevate Your Digital Presence.**  
 *Web Development · Software · AI Solutions*
@@ -7,7 +7,7 @@
 
 ## 🌟 Overview & Key Features
 
-This repository contains the complete production-ready source code for **ELEV8 DIGITAL**, designed to help businesses build credibility, scale their online presence, and convert visitors into paying clients with clean, high-performance web engineering.
+This repository contains the complete production-ready source code for **ELEV8vx**, designed to help businesses build credibility, scale their online presence, and convert visitors into paying clients with clean, high-performance web engineering.
 
 ### Included Features & Architecture:
 1. **Interactive Team 3D Flip Cards:**
@@ -61,4 +61,4 @@ Visit `http://localhost:8000` (or your local IP for mobile testing, e.g. `http:/
 ---
 
 ## 📄 License
-© 2026 ELEV8 DIGITAL. All rights reserved.
+© 2026 ELEV8vx. All rights reserved.

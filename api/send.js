@@ -76,7 +76,7 @@ export async function sendApplicationEmail({
       <div class="card">
         <div class="header">
           <h1>🚀 New Website Application</h1>
-          <p>Submitted via LowensELEVATE Intake Form</p>
+          <p>Submitted via ELEV8vx Intake Form</p>
         </div>
         <div class="content">
           <!-- 1. Client & Business Details -->
@@ -123,13 +123,13 @@ export async function sendApplicationEmail({
           </div>
 
           <div style="text-align: center; margin-top: 20px;">
-            <a href="mailto:${escapeHtml(email)}?subject=Re: Your Website Inquiry with LowensELEVATE" class="button">
+            <a href="mailto:${escapeHtml(email)}?subject=Re: Your Website Inquiry with ELEV8vx" class="button">
               Reply to ${escapeHtml(clientName)} &rarr;
             </a>
           </div>
         </div>
         <div class="footer">
-          Received at ${new Date().toLocaleString('en-US', { timeZoneName: 'short' })} &bull; LowensELEVATE
+          Received at ${new Date().toLocaleString('en-US', { timeZoneName: 'short' })} &bull; ELEV8vx
         </div>
       </div>
     </body>
@@ -140,7 +140,7 @@ export async function sendApplicationEmail({
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'LowensELEVATE Applications <onboarding@resend.dev>',
+      from: 'ELEV8vx Applications <onboarding@resend.dev>',
       to: [recipient],
       replyTo: email,
       subject: `🚀 New Project Application: ${clientBusiness} (${clientName})`,
