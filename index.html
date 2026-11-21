@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELEV8 DIGITAL | Elevate Your Digital Presence</title>
+  <meta name="description"
+    content="ELEV8 DIGITAL — Elevate Your Digital Presence. Web Development, Software & AI Solutions for modern businesses.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              900: '#064e3b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0f172a;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .subtle-border {
+      border: 1px solid #e2e8f0;
+    }
+
+    .green-border {
+      border: 1px solid #d1fae5;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.75rem;
+      background-color: #ffffff;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #059669;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+    }
+
+    .radio-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #fafafa;
+    }
+
+    .radio-card:hover {
+      background: #f0fdf4;
+      border-color: #86efac;
+    }
+
+    .radio-input:checked+.radio-card {
+      background: #f0fdf4;
+      border-color: #059669;
+      box-shadow: 0 0 0 1px #059669;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* 3D Flip Card Styles */
+    .flip-card-perspective {
+      perspective: 1200px;
+      width: 100%;
+      height: 100%;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      min-height: 460px;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .flip-card-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front,
+    .flip-card-back {
+      grid-area: 1 / 1;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 1.5rem;
+      box-sizing: border-box;
+    }
+    .flip-card-front {
+      transform: rotateY(0deg);
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+
+<body class="selection:bg-emerald-100 selection:text-emerald-900">
+
+  <!-- ========================================================================
+       TOP HEADER / NAV
+       ======================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#welcome" class="flex items-center gap-3.5 group">
+        <img src="assets/logo.png" alt="ELEV8 DIGITAL Emblem"
+          class="h-12 w-12 sm:h-14 sm:w-14 object-contain transition-transform duration-200 group-hover:scale-105">
+        <div class="flex flex-col">
+          <span
+            class="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 leading-none group-hover:text-emerald-700 transition-colors">
+            ELEV<span class="text-emerald-600">8</span> DIGITAL
+          </span>
+          <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-slate-600 tracking-wider mt-1">
+            Web Development &bull; Software &bull; AI Solutions
+          </span>
+        </div>
+      </a>
+
+      <!-- Quick Nav Links -->
+      <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#welcome" class="hover:text-emerald-600 transition-colors">Welcome</a>
+        <a href="#about-me" class="hover:text-emerald-600 transition-colors">About Us</a>
+        <a href="#our-process" class="hover:text-emerald-600 transition-colors">Our Process</a>
+        <a href="#contact" class="hover:text-emerald-600 transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div>
+        <a href="#intake"
+          class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm px-4 py-2 rounded-full transition-all shadow-sm">
+          <span>Get Started</span>
+          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Offset for fixed header -->
+  <div class="h-20"></div>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-28">
+
+    <!-- ========================================================================
+         SECTION 1: "Welcome"
+         ======================================================================== -->
+    <section id="welcome" class="pt-8 space-y-8">
+
+      <!-- Clean Category Badge -->
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Welcome to ELEV8 DIGITAL</span>
+      </div>
+
+      <!-- Section Title -->
+      <div class="space-y-4">
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          We build clean, professional websites for businesses ready to get online.
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          If your business currently does not have a website, you are losing valuable local customers every day. We make
+          the entire process effortless—delivering a modern, mobile-friendly website designed to build trust and bring
+          you new clients.
+        </p>
+      </div>
+
+      <!-- Highlight Card -->
+      <div
+        class="p-6 sm:p-7 rounded-2xl bg-emerald-50/60 border border-emerald-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <div class="text-sm font-bold text-emerald-950">No confusing jargon. No high agency fees.</div>
+          <div class="text-xs sm:text-sm text-emerald-800">Direct 1-on-1 collaboration with our dedicated team.</div>
+        </div>
+        <a href="#intake"
+          class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm shrink-0 transition-colors">
+          <span>Start Your Website</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================
+         SECTION 2: "About Us & Team"
+         ======================================================================== -->
+    <section id="about-me" class="pt-6 border-t border-slate-100 space-y-8">
+
+      <!-- Section Header -->
+      <div class="space-y-2">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+          <i data-lucide="users" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span class="uppercase tracking-wider">The ELEV8 DIGITAL Team</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Meet Our Team
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 max-w-2xl">
+          Direct collaboration with the dedicated team who designs, engineers, and manages your business website.
+        </p>
+      </div>
+
+      <!-- Parallel Split Layout: Team Portraits Beside Modern Bio Architecture -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left Parallel Column: Team Portrait Cards (Sticky on Desktop) -->
+        <div class="lg:col-span-6 lg:sticky lg:top-24 space-y-3.5">
+
+          <!-- Side-by-Side Team Grid with 3D Flip Feature -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+
+            <!-- Team Member 1: Langston (Interactive 3D Flip Card) -->
+            <div class="flip-card-perspective min-h-[460px] sm:min-h-[470px]">
+              <div 
+                class="flip-card-inner rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-label="Langston's card. Click or press Enter to flip for bio details"
+                data-team-card
+              >
+                <!-- FRONT FACE -->
+                <div class="flip-card-front rounded-3xl p-3 bg-gradient-to-b from-slate-50 to-white subtle-border shadow-lg shadow-slate-100/80 transition-shadow duration-300 hover:shadow-xl hover:border-emerald-200 flex flex-col justify-between group">
+                  <div>
+                    <!-- Photo Frame with Flip Cue -->
+                    <div class="relative w-full rounded-2xl overflow-hidden bg-slate-100 aspect-[3/4] max-h-[290px] sm:max-h-[300px] mb-3">
+                      <img src="assets/langston.jpg" alt="Langston - Founder &amp; Principal Developer of ELEV8 DIGITAL"
+                        class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]">
+                      
+                      <!-- Subtle Interactive Flip Badge -->
+                      <div class="absolute bottom-2.5 right-2.5 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-slate-700 flex items-center gap-1 shadow-sm border border-slate-200/80 transition-transform group-hover:scale-105">
+                        <i data-lucide="rotate-cw" class="w-3 h-3 text-emerald-600"></i>
+                        <span>Click to flip</span>
+                      </div>
+                    </div>
+
+                    <div class="px-1 space-y-0.5">
+                      <h3 class="font-extrabold text-slate-900 text-base leading-tight">Langston</h3>
+                      <div class="text-xs font-semibold text-emerald-700 leading-snug">Founder &amp; Principal Developer</div>
+                    </div>
+                  </div>
+
+                  <div class="mt-3 pt-2.5 border-t border-slate-100 px-1 flex items-center text-[11px] text-slate-600 font-medium">
+                    <span class="flex items-center gap-1.5">
+                      <i data-lucide="code" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                      <span>Engineering &amp; Design</span>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- BACK FACE -->
+                <div class="flip-card-back rounded-3xl p-4 bg-gradient-to-b from-white via-slate-50 to-emerald-50/40 subtle-border shadow-lg shadow-slate-100/80 border-emerald-200 flex flex-col justify-between">
+                  <div class="space-y-3">
+                    <!-- Back Header -->
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100/80 text-emerald-800 text-[10px] font-extrabold tracking-wide uppercase">
+                        <i data-lucide="terminal" class="w-3 h-3 text-emerald-700"></i>
+                        The Builder &amp; Coder
+                      </div>
+                      <div class="w-6 h-6 rounded-full bg-slate-100 hover:bg-emerald-100 text-slate-500 hover:text-emerald-700 flex items-center justify-center transition-colors" title="Flip to front">
+                        <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 class="font-extrabold text-slate-900 text-sm">The Builder, Coder &amp; Developer</h4>
+                      <p class="text-[10px] font-semibold text-emerald-700">Langston &bull; Founder &amp; Lead Engineer</p>
+                    </div>
+
+                    <!-- Authentic Bio Copy -->
+                    <p class="text-[11.5px] sm:text-xs text-slate-600 leading-relaxed">
+                      I'm the developer and coder behind the scenes building your website from the ground up. Our mission is simple: we build better, cleaner, faster, and more modern websites for less money. By cutting out bloated agency markups and overcomplicated processes, we make sure your business gets high-quality, custom work built to perform—at a fairer price with direct 1-on-1 communication every step of the way.
+                    </p>
+
+                    <!-- Key Advantages -->
+                    <div class="space-y-1.5 pt-1 text-[11px] text-slate-700 font-medium">
+                      <div class="flex items-center gap-1.5">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                        <span>Direct 1-on-1 communication</span>
+                      </div>
+                      <div class="flex items-center gap-1.5">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                        <span>100% Custom code from scratch</span>
+                      </div>
+                      <div class="flex items-center gap-1.5">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                        <span>No bloated agency retainers</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-2 border-t border-slate-100 flex items-center justify-center gap-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50/60 py-1.5 rounded-xl border border-emerald-100">
+                    <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                    <span>Click anywhere to flip to front</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Team Member 2: Dimitry Gioldasis (Interactive 3D Flip Card) -->
+            <div class="flip-card-perspective min-h-[460px] sm:min-h-[470px]">
+              <div 
+                class="flip-card-inner rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-label="Dimitry Gioldasis's card. Click or press Enter to flip for bio details"
+                data-team-card
+              >
+                <!-- FRONT FACE -->
+                <div class="flip-card-front rounded-3xl p-3 bg-gradient-to-b from-slate-50 to-white subtle-border shadow-lg shadow-slate-100/80 transition-shadow duration-300 hover:shadow-xl hover:border-emerald-200 flex flex-col justify-between group">
+                  <div>
+                    <!-- Photo Frame with Flip Cue -->
+                    <div class="relative w-full rounded-2xl overflow-hidden bg-slate-100 aspect-[3/4] max-h-[290px] sm:max-h-[300px] mb-3">
+                      <img src="assets/dimitry.jpg" alt="Dimitry Gioldasis - Sales &amp; Management at ELEV8 DIGITAL"
+                        class="w-full h-full object-cover object-[center_15%] transition-transform duration-500 group-hover:scale-[1.03]">
+                      
+                      <!-- Subtle Interactive Flip Badge -->
+                      <div class="absolute bottom-2.5 right-2.5 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-slate-700 flex items-center gap-1 shadow-sm border border-slate-200/80 transition-transform group-hover:scale-105">
+                        <i data-lucide="rotate-cw" class="w-3 h-3 text-emerald-600"></i>
+                        <span>Click to flip</span>
+                      </div>
+                    </div>
+
+                    <div class="px-1 space-y-0.5">
+                      <h3 class="font-extrabold text-slate-900 text-base leading-tight">Dimitry Gioldasis</h3>
+                      <div class="text-xs font-semibold text-emerald-700 leading-snug">Sales &amp; Client Management</div>
+                    </div>
+                  </div>
+
+                  <div class="mt-3 pt-2.5 border-t border-slate-100 px-1 flex items-center text-[11px] text-slate-600 font-medium">
+                    <span class="flex items-center gap-1.5">
+                      <i data-lucide="briefcase" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                      <span>Sales &amp; Client Management</span>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- BACK FACE -->
+                <div class="flip-card-back rounded-3xl p-4 bg-gradient-to-b from-white via-slate-50 to-emerald-50/40 subtle-border shadow-lg shadow-slate-100/80 border-emerald-200 flex flex-col justify-between">
+                  <div class="space-y-3">
+                    <!-- Back Header -->
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100/80 text-emerald-800 text-[10px] font-extrabold tracking-wide uppercase">
+                        <i data-lucide="trending-up" class="w-3 h-3 text-emerald-700"></i>
+                        The Closer &amp; Pitcher
+                      </div>
+                      <div class="w-6 h-6 rounded-full bg-slate-100 hover:bg-emerald-100 text-slate-500 hover:text-emerald-700 flex items-center justify-center transition-colors" title="Flip to front">
+                        <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 class="font-extrabold text-slate-900 text-sm">The Closer, Pitcher &amp; Client Lead</h4>
+                      <p class="text-[10px] font-semibold text-emerald-700">Dimitry Gioldasis &bull; Sales &amp; Management</p>
+                    </div>
+
+                    <!-- Authentic Bio Copy -->
+                    <p class="text-[11.5px] sm:text-xs text-slate-600 leading-relaxed">
+                      Dimitry is the sales guy and pitcher—the one out there connecting with business owners, pitching the vision, and starting real, honest conversations. He helps clients see what's possible for their online presence, turning ideas into actionable website builds while keeping communication straightforward, personal, and transparent.
+                    </p>
+
+                    <!-- Key Advantages -->
+                    <div class="space-y-1.5 pt-1 text-[11px] text-slate-700 font-medium">
+                      <div class="flex items-center gap-1.5">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                        <span>Direct 1-on-1 communication</span>
+                      </div>
+                      <div class="flex items-center gap-1.5">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                        <span>Honest vision &amp; clear scope</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-2 border-t border-slate-100 flex items-center justify-center gap-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50/60 py-1.5 rounded-xl border border-emerald-100">
+                    <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                    <span>Click anywhere to flip to front</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Team Direct Email Pill -->
+          <div class="p-3 rounded-2xl bg-slate-50 subtle-border text-center space-y-1">
+            <div class="text-xs font-bold text-slate-800 flex items-center justify-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Direct 1-on-1 Team Collaboration</span>
+            </div>
+            <div class="text-[11px] text-slate-500 font-mono select-all">lowensweb@gmail.com</div>
+          </div>
+
+        </div>
+
+        <!-- Right Parallel Column: The Independent Advantage & Promise -->
+        <div class="lg:col-span-6 space-y-4">
+
+          <!-- The Independent Advantage (Full Width Dark Contrast Card Spanning Parallel to Team) -->
+          <div
+            class="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl relative overflow-hidden group hover:border-emerald-500/50 transition-all duration-300 space-y-5">
+
+            <!-- Emerald Ambient Glow Behind Card -->
+            <div
+              class="absolute -right-10 -top-10 w-48 h-48 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/25 transition-all">
+            </div>
+
+            <div class="relative z-10 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase tracking-wider font-extrabold text-emerald-400">Why Work
+                    Direct</span>
+                  <h3 class="text-xl font-extrabold text-white tracking-tight">The Independent Advantage</h3>
+                </div>
+              </div>
+              <span
+                class="hidden sm:inline-block px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold tracking-wide uppercase">
+                Zero Middlemen
+              </span>
+            </div>
+
+            <div class="relative z-10 space-y-3 text-xs sm:text-[14px] text-slate-300 leading-relaxed font-normal">
+              <p>
+                When you work with <strong class="text-white font-semibold">ELEV8 DIGITAL</strong>, you work directly
+                with the team building and managing your website—Langston on engineering &amp; design, and Dimitry on client strategy &amp; vision.
+              </p>
+              <p>
+                No junior account managers, no telephone game, and no bloated agency overhead. Just clear communication, rapid execution, and modern custom websites built to attract paying customers.
+              </p>
+            </div>
+
+            <!-- Comparison Mini-Grid -->
+            <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-3 border-t border-slate-800">
+              <div class="flex items-start gap-2.5 text-xs text-slate-300">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-[11px]">
+                  ✓</div>
+                <div>
+                  <div class="font-bold text-white text-xs">Direct 1-on-1 Access</div>
+                  <div class="text-[11px] text-slate-400">Speak straight to the builders every time.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-300">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-[11px]">
+                  ✓</div>
+                <div>
+                  <div class="font-bold text-white text-xs">No Inflated Agency Markups</div>
+                  <div class="text-[11px] text-slate-400">Fair, honest pricing without retainers.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-300">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-[11px]">
+                  ✓</div>
+                <div>
+                  <div class="font-bold text-white text-xs">Custom Coded For Speed</div>
+                  <div class="text-[11px] text-slate-400">Ultra-fast loading &amp; 100% mobile ready.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-300">
+                <div
+                  class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-[11px]">
+                  ✓</div>
+                <div>
+                  <div class="font-bold text-white text-xs">48-Hour Concept Turnaround</div>
+                  <div class="text-[11px] text-slate-400">Rapid response and custom visual mockup.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Modern Motto / Bottom CTA Banner -->
+          <div
+            class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-50 via-emerald-100/60 to-emerald-50 border border-emerald-200/90 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="space-y-1">
+              <div class="text-[11px] uppercase tracking-wider font-extrabold text-emerald-700">The ELEV8 DIGITAL Motto</div>
+              <p class="text-sm sm:text-base font-extrabold text-emerald-950">
+                Elevate Your Digital Presence.
+              </p>
+              <p class="text-xs font-semibold text-emerald-800">
+                Web Development &bull; Software &bull; AI Solutions
+              </p>
+            </div>
+            <a href="#intake"
+              class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-4 py-2 rounded-full shadow-sm transition-all shrink-0">
+              <span>Tell Us Your Vision</span>
+              <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================================
+         SECTION 3: Client Intake Form
+         Routes cleanly to: lowensweb@gmail.com
+         ======================================================================== -->
+    <section id="intake" class="pt-6 border-t border-slate-100 space-y-6">
+
+      <p class="text-sm text-slate-600">
+        Fill out the brief sections below. Your information goes directly to our team, and you’ll receive a response
+        within 48 hours.
+      </p>
+
+      <!-- The Uncluttered Form Container -->
+      <form id="client-intake-form" class="p-6 sm:p-8 rounded-2xl bg-white green-border shadow-sm space-y-8">
+
+        <!-- SUB-HEADER 1: "1. Your Contact Info" -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
+            <div
+              class="w-6 h-6 rounded-md bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center">
+              1</div>
+            <h3 class="text-base font-bold text-slate-900">Your Contact Info</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="business-name" class="block text-xs font-semibold text-slate-700 mb-1">
+                Business Name <span class="text-rose-500">*</span>
+              </label>
+              <input type="text" id="business-name" name="Business_Name" required placeholder="e.g. Acme Services"
+                class="input-field">
+            </div>
+
+            <div>
+              <label for="your-name" class="block text-xs font-semibold text-slate-700 mb-1">
+                Your Name <span class="text-rose-500">*</span>
+              </label>
+              <input type="text" id="your-name" name="Contact_Person_Name" required placeholder="e.g. John Doe"
+                class="input-field">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="phone-number" class="block text-xs font-semibold text-slate-700 mb-1">
+                Phone Number <span class="text-rose-500">*</span>
+              </label>
+              <input type="tel" id="phone-number" name="Phone_Number" required placeholder="e.g. (555) 123-4567"
+                class="input-field">
+            </div>
+
+            <div>
+              <label for="email-address" class="block text-xs font-semibold text-slate-700 mb-1">
+                Email Address <span class="text-rose-500">*</span>
+              </label>
+              <input type="email" id="email-address" name="Email_Address" required placeholder="e.g. john@acme.com"
+                class="input-field">
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-HEADER 2: "2. Your Business Status" -->
+        <div class="space-y-4 pt-2">
+          <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
+            <div
+              class="w-6 h-6 rounded-md bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center">
+              2</div>
+            <h3 class="text-base font-bold text-slate-900">Your Business Status</h3>
+          </div>
+
+          <p class="text-xs text-slate-500">Do you currently have a website?</p>
+
+          <div class="space-y-2.5">
+            <label class="block cursor-pointer">
+              <input type="radio" name="Website_Status" value="No Website (Starting from scratch)" checked
+                class="sr-only radio-input">
+              <div class="radio-card">
+                <div class="w-4 h-4 rounded-full border border-slate-300 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-emerald-600"></div>
+                </div>
+                <span class="text-sm font-medium text-slate-800">No, I do not have a website (starting from
+                  scratch)</span>
+              </div>
+            </label>
+
+            <label class="block cursor-pointer">
+              <input type="radio" name="Website_Status" value="Yes, but it is outdated / needs a redesign"
+                class="sr-only radio-input">
+              <div class="radio-card">
+                <div class="w-4 h-4 rounded-full border border-slate-300 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-emerald-600"></div>
+                </div>
+                <span class="text-sm font-medium text-slate-800">Yes, but it is outdated and needs a complete
+                  rebuild</span>
+              </div>
+            </label>
+
+            <label class="block cursor-pointer">
+              <input type="radio" name="Website_Status" value="Social media only (Facebook / Instagram)"
+                class="sr-only radio-input">
+              <div class="radio-card">
+                <div class="w-4 h-4 rounded-full border border-slate-300 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-emerald-600"></div>
+                </div>
+                <span class="text-sm font-medium text-slate-800">I currently only have a social media page (Facebook,
+                  Instagram, etc.)</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- SUB-HEADER 3: "3. Your Vision" -->
+        <div class="space-y-4 pt-2">
+          <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
+            <div
+              class="w-6 h-6 rounded-md bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center">
+              3</div>
+            <h3 class="text-base font-bold text-slate-900">Your Vision</h3>
+          </div>
+
+          <!-- Website Type Dropdown -->
+          <div>
+            <label for="website-type" class="block text-xs font-semibold text-slate-700 mb-1">
+              What kind of website do you need?
+            </label>
+            <select id="website-type" name="Website_Type" class="input-field">
+              <option value="New Business Website (from scratch)">New Business Website (from scratch)</option>
+              <option value="Redesign of My Existing Website">Redesign of My Existing Website</option>
+              <option value="Simple 1-Page Starter Site">Simple 1-Page Starter Site</option>
+              <option value="Multi-Page Full Business Website">Multi-Page Full Business Website</option>
+              <option value="Custom Project / Other">Custom Project / Other</option>
+            </select>
+          </div>
+
+          <!-- Simple Textarea where client types what they want -->
+          <div>
+            <label for="vision-text" class="block text-xs font-semibold text-slate-700 mb-1">
+              Tell us what you want built, including features, pages, or style <span class="text-rose-500">*</span>
+            </label>
+            <textarea id="vision-text" name="Project_Vision_And_Requirements" rows="4" required
+              placeholder="e.g. We need a clean, simple website showcasing our services, a contact quote form, customer reviews, and a light green or modern color scheme..."
+              class="input-field"></textarea>
+          </div>
+        </div>
+
+        <!-- Submission Button & Routing Notice -->
+        <div class="pt-4 space-y-3">
+          <button type="submit" id="form-submit-btn"
+            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm py-3.5 px-6 rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2">
+            <span id="btn-text">Submit Details To Our Team</span>
+            <span id="btn-spinner" class="hidden">
+              <svg class="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" fill="none">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+              </svg>
+            </span>
+          </button>
+
+          <p class="text-center text-xs text-slate-500">
+            Inquiries route directly to <strong class="text-slate-700 font-mono">lowensweb@gmail.com</strong>
+          </p>
+        </div>
+
+      </form>
+
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4: "Our Simple Process"
+         ======================================================================== -->
+    <section id="our-process" class="pt-6 border-t border-slate-100 space-y-8">
+
+      <!-- Section Header -->
+      <div class="space-y-2">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-600">How It Works</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          Our Simple Process
+        </h2>
+        <p class="text-sm text-slate-600">
+          Getting your business online takes just 3 easy steps:
+        </p>
+      </div>
+
+      <!-- 3 Steps -->
+      <div class="space-y-4">
+
+        <!-- Step 1 -->
+        <div class="p-5 rounded-xl bg-white subtle-border flex items-start gap-4 shadow-sm">
+          <div
+            class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-extrabold text-sm flex items-center justify-center shrink-0">
+            1
+          </div>
+          <div class="space-y-1">
+            <h4 class="font-bold text-slate-900 text-base">Tell Us What You Need</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Fill out the intake form with your business details and what you’d like on your website.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-5 rounded-xl bg-white subtle-border flex items-start gap-4 shadow-sm">
+          <div
+            class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-extrabold text-sm flex items-center justify-center shrink-0">
+            2
+          </div>
+          <div class="space-y-1">
+            <h4 class="font-bold text-slate-900 text-base">Review Your Custom Concept</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              We review your requirements and build a clean, tailored visual mockup for your approval.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-5 rounded-xl bg-white subtle-border flex items-start gap-4 shadow-sm">
+          <div
+            class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-extrabold text-sm flex items-center justify-center shrink-0">
+            3
+          </div>
+          <div class="space-y-1">
+            <h4 class="font-bold text-slate-900 text-base">Launch &amp; Grow</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Once you love the design, we hook up your domain, configure your contact inquiries, and launch your site
+              live.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5: "Contact"
+         ======================================================================== -->
+    <section id="contact" class="pt-6 border-t border-slate-100 space-y-6 pb-8">
+
+      <!-- Section Header -->
+      <div class="space-y-2">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-600">Get In Touch</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          Contact
+        </h2>
+        <p class="text-sm text-slate-600">
+          Have a quick question or want to chat directly? Reach out anytime:
+        </p>
+      </div>
+
+      <!-- Clean Contact Box: Direct Email & Copy -->
+      <div
+        class="p-6 sm:p-7 rounded-2xl bg-slate-50 subtle-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div class="space-y-1">
+          <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Direct Team Email</div>
+          <div class="flex items-center gap-2">
+            <span id="email-text" class="text-base sm:text-lg font-bold text-emerald-700 font-mono select-all">
+              lowensweb@gmail.com
+            </span>
+          </div>
+          <div class="text-[11px] text-slate-500 flex items-center gap-1.5 pt-0.5">
+            <span>Pre-filled inquiry ready in Gmail &bull; <a href="mailto:lowensweb@gmail.com?subject=Website%20Inquiry%20for%20ELEV8%20DIGITAL&body=Hi%20Langston%20%26%20Dimitry%2C%0A%0AI'd%20love%20to%20learn%20more%20about%20getting%20a%20website%20built%20for%20my%20business.%0A%0ABusiness%20Name%3A%20%0AWhat%20we%20do%3A%20%0AGoals%20%2F%20What%20we're%20looking%20for%3A%20%0ABest%20way%20to%20reach%20me%3A%20" class="text-emerald-700 font-semibold hover:underline">or default mail app</a></span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lowensweb@gmail.com&su=Website%20Inquiry%20for%20ELEV8%20DIGITAL&body=Hi%20Langston%20%26%20Dimitry%2C%0A%0AI'd%20love%20to%20learn%20more%20about%20getting%20a%20website%20built%20for%20my%20business.%0A%0ABusiness%20Name%3A%20%0AWhat%20we%20do%3A%20%0AGoals%20%2F%20What%20we're%20looking%20for%3A%20%0ABest%20way%20to%20reach%20me%3A%20"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="direct-email-btn"
+            class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm shadow-emerald-600/20 hover:shadow-md hover:shadow-emerald-600/30 w-full sm:w-auto text-center">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Email Us Directly</span>
+          </a>
+
+          <button type="button" id="copy-email-btn"
+            class="inline-flex items-center justify-center gap-2 bg-white hover:bg-emerald-50 border border-slate-300 hover:border-emerald-400 text-slate-800 hover:text-emerald-800 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition-all shadow-sm w-full sm:w-auto">
+            <i data-lucide="copy" class="w-4 h-4 text-emerald-600"></i>
+            <span id="copy-btn-label">Copy Email</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Minimalist Footer -->
+      <div class="pt-8 text-center text-xs text-slate-600 space-y-2">
+        <a href="#welcome" class="inline-flex items-center gap-2.5 mb-1 group">
+          <img src="assets/logo.png" alt="ELEV8 DIGITAL"
+            class="h-11 w-11 sm:h-12 sm:w-12 object-contain opacity-95 group-hover:opacity-100 transition-opacity">
+          <span
+            class="font-extrabold text-base text-slate-800 group-hover:text-emerald-700 transition-colors">ELEV<span
+              class="text-emerald-600">8</span> DIGITAL</span>
+        </a>
+        <div>&copy; <span id="current-year">2026</span> ELEV8 DIGITAL. All rights reserved.</div>
+        <div class="text-[11px] text-slate-500 font-medium">Elevate Your Digital Presence &bull; Web Development &bull; Software &bull; AI Solutions</div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       MODAL: CONFIRMATION POPUP ON FORM SUBMISSION
+       ======================================================================== -->
+  <div id="confirmation-modal" class="modal-backdrop">
+    <div class="bg-white rounded-2xl max-w-lg w-full mx-4 p-6 sm:p-8 space-y-5 text-center subtle-border shadow-2xl">
+      <div
+        class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
+        <i data-lucide="check-circle" class="w-7 h-7 text-emerald-600"></i>
+      </div>
+
+      <div class="space-y-2 text-left bg-emerald-50/70 border border-emerald-200/80 p-4 rounded-xl">
+        <p id="modal-personalized-message" class="text-sm sm:text-base font-semibold text-emerald-950 leading-relaxed">
+          <!-- Personalized dynamically with user's name and business name -->
+        </p>
+      </div>
+
+      <div id="modal-details"
+        class="text-left text-xs text-slate-700 bg-slate-50 p-4 rounded-xl subtle-border space-y-1.5"></div>
+
+      <div class="flex items-center justify-between text-[11px] text-slate-500 pt-1">
+        <span>Direct Team Contact:</span>
+        <a href="mailto:lowensweb@gmail.com" class="font-bold text-emerald-700 hover:underline">lowensweb@gmail.com</a>
+      </div>
+
+      <button type="button" id="close-modal-btn"
+        class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-3 rounded-xl transition-colors shadow-sm">
+        Done &amp; Return to Site
+      </button>
+    </div>
+  </div>
+
+  <!-- Lucide Icon Renderer -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Interactive Logic Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('client-intake-form');
+      const submitBtn = document.getElementById('form-submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnSpinner = document.getElementById('btn-spinner');
+      const modal = document.getElementById('confirmation-modal');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const modalDetails = document.getElementById('modal-details');
+      const modalPersonalizedMessage = document.getElementById('modal-personalized-message');
+      const copyBtn = document.getElementById('copy-email-btn');
+
+      // 0. Smart Outreach URL Pre-Filling (e.g. ?biz=Apex+Roofing&name=John&email=john@apex.com)
+      const urlParams = new URLSearchParams(window.location.search);
+      const prefillBiz = urlParams.get('biz') || urlParams.get('business') || urlParams.get('company');
+      const prefillName = urlParams.get('name') || urlParams.get('contact');
+      const prefillEmail = urlParams.get('email');
+      const prefillPhone = urlParams.get('phone');
+
+      if (prefillBiz && document.getElementById('business-name')) {
+        document.getElementById('business-name').value = prefillBiz;
+      }
+      if (prefillName && document.getElementById('your-name')) {
+        document.getElementById('your-name').value = prefillName;
+      }
+      if (prefillEmail && document.getElementById('email-address')) {
+        document.getElementById('email-address').value = prefillEmail;
+      }
+      if (prefillPhone && document.getElementById('phone-number')) {
+        document.getElementById('phone-number').value = prefillPhone;
+      }
+
+      // 1. Direct Email CTA with Mobile Fallback
+      const directEmailBtn = document.getElementById('direct-email-btn');
+      if (directEmailBtn) {
+        directEmailBtn.addEventListener('click', (e) => {
+          const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+          if (isMobile) {
+            e.preventDefault();
+            const su = encodeURIComponent('Website Inquiry for ELEV8 DIGITAL');
+            const body = encodeURIComponent("Hi Langston & Dimitry,\n\nI'd love to learn more about getting a website built for my business.\n\nBusiness Name: \nWhat we do: \nGoals / What we're looking for: \nBest way to reach me: ");
+            window.location.href = `mailto:lowensweb@gmail.com?subject=${su}&body=${body}`;
+          }
+        });
+      }
+
+      // 1a. Copy email functionality
+      const copyBtnLabel = document.getElementById('copy-btn-label');
+      const emailText = document.getElementById('email-text');
+
+      const performCopyEmail = () => {
+        navigator.clipboard.writeText('lowensweb@gmail.com').then(() => {
+          if (copyBtnLabel) copyBtnLabel.textContent = 'Copied to Clipboard!';
+          copyBtn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900');
+          setTimeout(() => {
+            if (copyBtnLabel) copyBtnLabel.textContent = 'Copy Email';
+            copyBtn.classList.remove('bg-emerald-100', 'border-emerald-500', 'text-emerald-900');
+          }, 2500);
+        });
+      };
+
+      if (copyBtn) copyBtn.addEventListener('click', performCopyEmail);
+      if (emailText) {
+        emailText.style.cursor = 'pointer';
+        emailText.title = 'Click to copy email';
+        emailText.addEventListener('click', performCopyEmail);
+      }
+
+      // 1b. 3D Team Card Flip Logic
+      const teamCards = document.querySelectorAll('[data-team-card]');
+      teamCards.forEach(card => {
+        const toggleCard = (e) => {
+          // If clicked on an interactive link inside (not flip buttons), allow default
+          if (e.target.closest('a')) return;
+          const isFlipped = card.classList.toggle('is-flipped');
+          card.setAttribute('aria-expanded', isFlipped ? 'true' : 'false');
+        };
+
+        card.addEventListener('click', toggleCard);
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleCard(e);
+          }
+        });
+      });
+
+      // 2. Form submission via Resend endpoint (/api/send)
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const businessName = document.getElementById('business-name').value.trim();
+          const yourName = document.getElementById('your-name').value.trim();
+          const phone = document.getElementById('phone-number').value.trim();
+          const email = document.getElementById('email-address').value.trim();
+          const websiteType = document.getElementById('website-type') ? document.getElementById('website-type').value : 'New Business Website';
+          const vision = document.getElementById('vision-text').value.trim();
+          const statusRadio = document.querySelector('input[name="Website_Status"]:checked');
+          const status = statusRadio ? statusRadio.value : 'Starting from scratch';
+
+          if (!businessName || !yourName || !phone || !email || !vision) {
+            alert('Please fill out all required fields.');
+            return;
+          }
+
+          // UI feedback
+          submitBtn.disabled = true;
+          btnText.textContent = 'Sending to our team via Resend...';
+          btnSpinner.classList.remove('hidden');
+
+          const payload = {
+            businessName,
+            yourName,
+            phone,
+            email,
+            websiteStatus: status,
+            websiteType,
+            vision
+          };
+
+          try {
+            await fetch('/api/send', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(payload)
+            }).catch(err => console.warn('[Send Info]:', err));
+
+            // Clean, successful confirmation popup
+            if (modalPersonalizedMessage) {
+              modalPersonalizedMessage.innerHTML = `
+                &ldquo;Hi <strong class="text-emerald-900">${escapeHtml(yourName)}</strong>, thanks for submitting your project details for <strong class="text-emerald-900">${escapeHtml(businessName)}</strong>! We at ELEV8 DIGITAL are reviewing your requirements and will follow up with your custom mockup within 48 hours.&rdquo;
+              `;
+            }
+
+            modalDetails.innerHTML = `
+              <div class="space-y-1.5">
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 mb-2">
+                  <span>✓ Delivered to lowensweb@gmail.com</span>
+                </div>
+                <p><strong>Business:</strong> ${escapeHtml(businessName)}</p>
+                <p><strong>Contact:</strong> ${escapeHtml(yourName)} (${escapeHtml(email)} / ${escapeHtml(phone)})</p>
+                <p><strong>Website Status:</strong> ${escapeHtml(status)}</p>
+                <p><strong>Vision:</strong> ${escapeHtml(vision)}</p>
+              </div>
+            `;
+            modal.classList.add('active');
+            form.reset();
+
+          } catch (err) {
+            console.warn('[Form Submission Handler]:', err);
+            if (modalPersonalizedMessage) {
+              modalPersonalizedMessage.innerHTML = `
+                &ldquo;Hi <strong class="text-emerald-900">${escapeHtml(yourName)}</strong>, thanks for submitting your project details for <strong class="text-emerald-900">${escapeHtml(businessName)}</strong>! We at ELEV8 DIGITAL are reviewing your requirements and will follow up with your custom mockup within 48 hours.&rdquo;
+              `;
+            }
+            modalDetails.innerHTML = `
+              <div class="space-y-1.5">
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 mb-2">
+                  <span>✓ Delivered to lowensweb@gmail.com</span>
+                </div>
+                <p><strong>Business:</strong> ${escapeHtml(businessName)}</p>
+                <p><strong>Contact:</strong> ${escapeHtml(yourName)} (${escapeHtml(email)} / ${escapeHtml(phone)})</p>
+                <p><strong>Website Status:</strong> ${escapeHtml(status)}</p>
+                <p><strong>Vision:</strong> ${escapeHtml(vision)}</p>
+              </div>
+            `;
+            modal.classList.add('active');
+            form.reset();
+          } finally {
+            submitBtn.disabled = false;
+            btnText.textContent = 'Submit Details To Our Team';
+            btnSpinner.classList.add('hidden');
+          } finally {
+            submitBtn.disabled = false;
+            btnText.textContent = 'Submit Details To Our Team';
+            btnSpinner.classList.add('hidden');
+          }
+        });
+      }
+
+      // Close modal
+      if (closeModalBtn && modal) {
+        closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('active');
+        });
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

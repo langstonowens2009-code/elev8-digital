@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Work & Portfolio | ELEV8 DIGITAL</title>
+  <meta name="description" content="Explore client website builds, live concepts, software, and AI solutions created by ELEV8 DIGITAL. Elevate Your Digital Presence.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              emerald: '#059669',
+              dark: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-emerald-100 selection:text-emerald-900">
+
+  <!-- ========================================================================
+       TOP HEADER / NAV
+       ======================================================================== -->
+  <header class="sticky-nav fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <img 
+            src="assets/logo.png" 
+            alt="ELEV8 DIGITAL Emblem" 
+            class="h-12 w-12 sm:h-14 sm:w-14 object-contain transition-transform duration-200 group-hover:scale-105"
+          >
+          <div class="flex flex-col">
+            <span class="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 leading-none group-hover:text-emerald-700 transition-colors">
+              ELEV<span class="text-emerald-600">8</span> DIGITAL
+            </span>
+            <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-slate-600 tracking-wider mt-1">
+              Web Development &bull; Software &bull; AI Solutions
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html#home" class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Home</a>
+          <a href="about.html" class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">About Me</a>
+          <a href="work.html" class="text-sm font-bold text-emerald-700 border-b-2 border-emerald-600 pb-0.5">Our Work</a>
+          <a href="index.html#pricing" class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Packages</a>
+        </nav>
+
+        <!-- CTA in header -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="index.html#intake-form" class="btn-primary text-sm px-5 py-2.5 shadow-sm">
+            <span>Start a Project</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Slide-out Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl">
+      <div class="flex flex-col space-y-3">
+        <a href="index.html#home" class="px-3 py-2 text-base font-medium text-slate-800 rounded-md hover:bg-emerald-50">Home</a>
+        <a href="about.html" class="px-3 py-2 text-base font-medium text-slate-800 rounded-md hover:bg-emerald-50">About Me</a>
+        <a href="work.html" class="px-3 py-2 text-base font-bold text-emerald-700 rounded-md bg-emerald-50">Our Work</a>
+        <a href="index.html#pricing" class="px-3 py-2 text-base font-medium text-slate-800 rounded-md hover:bg-emerald-50">Packages</a>
+        <div class="pt-3 border-t border-slate-100">
+          <a href="index.html#intake-form" class="btn-primary w-full text-center py-3">
+            <span>Get Started &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="h-20"></div>
+
+  <!-- ========================================================================
+       WORK SHOWCASE
+       ======================================================================== -->
+  <main class="py-16 md:py-24 bg-gradient-to-b from-emerald-50/20 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-4 mb-16 max-w-3xl mx-auto">
+        <span class="badge-light-green">
+          <i data-lucide="layout" class="w-3.5 h-3.5 text-emerald-600"></i>
+          Selected Builds &amp; Architecture
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Our Work
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Explore website concepts and production solutions built by our team. Every build is customized to turn visitors into leads with zero bloat and lightning load speeds.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1 -->
+        <div class="work-card">
+          <div class="work-img-container bg-gradient-to-br from-slate-900 to-emerald-950 p-6 flex flex-col justify-between text-white">
+            <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 self-start">
+              Home Services &amp; Trades
+            </span>
+            <div>
+              <div class="text-xs text-emerald-400 font-semibold">Contracting &amp; Remodeling</div>
+              <h3 class="text-lg font-bold">Apex Renovations</h3>
+            </div>
+            <div class="text-xs text-slate-400 font-mono">apex-renovations.com</div>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Equipped a premier local contractor with a high-speed project gallery, customer reviews carousel, and an instant estimate request funnel.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-xs text-emerald-800 font-semibold">
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Quote Engine</span>
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Gallery</span>
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Local SEO</span>
+            </div>
+            <div class="pt-3 border-t border-slate-100">
+              <a href="index.html#intake-form" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
+                Request a similar site &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="work-card">
+          <div class="work-img-container bg-gradient-to-br from-emerald-950 to-teal-900 p-6 flex flex-col justify-between text-white">
+            <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30 self-start">
+              Healthcare &amp; Clinic
+            </span>
+            <div>
+              <div class="text-xs text-emerald-300 font-semibold">Wellness &amp; Therapy</div>
+              <h3 class="text-lg font-bold">Aura Health Studio</h3>
+            </div>
+            <div class="text-xs text-slate-400 font-mono">aurahealthstudio.com</div>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Designed a clean, calming patient intake portal with mobile appointment scheduling and clear insurance &amp; pricing breakdowns.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-xs text-emerald-800 font-semibold">
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Online Booking</span>
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Staff Bios</span>
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Mobile-First</span>
+            </div>
+            <div class="pt-3 border-t border-slate-100">
+              <a href="index.html#intake-form" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
+                Request a similar site &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="work-card">
+          <div class="work-img-container bg-gradient-to-br from-slate-900 to-slate-800 p-6 flex flex-col justify-between text-white">
+            <span class="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 self-start">
+              Professional Advisory
+            </span>
+            <div>
+              <div class="text-xs text-emerald-400 font-semibold">Legal &amp; Business Consulting</div>
+              <h3 class="text-lg font-bold">Sterling Advisory Partners</h3>
+            </div>
+            <div class="text-xs text-slate-400 font-mono">sterlingadvisory.com</div>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 leading-relaxed">
+              A high-trust corporate portal featuring practice area overviews, lead qualification questionnaires, and encrypted consultation scheduling.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-xs text-emerald-800 font-semibold">
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Intake Flow</span>
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Case Studies</span>
+              <span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Fast CDN</span>
+            </div>
+            <div class="pt-3 border-t border-slate-100">
+              <a href="index.html#intake-form" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
+                Request a similar site &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Custom CTA Box -->
+      <div class="mt-16 text-center bg-emerald-50 border border-emerald-200 rounded-2xl p-10 max-w-3xl mx-auto space-y-4">
+        <h3 class="text-2xl font-bold text-slate-900">Don't see your specific industry?</h3>
+        <p class="text-slate-600 text-sm leading-relaxed max-w-xl mx-auto">
+          We build custom web solutions for restaurants, landscapers, accountants, real estate teams, personal trainers, and more. Tell us what you do and we’ll prepare a free concept mockup for your brand.
+        </p>
+        <div class="pt-2">
+          <a href="index.html#intake-form" class="btn-primary text-sm px-8 py-3.5 shadow-md">
+            <span>Fill Out Your Intake Details &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-center text-xs">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <div>&copy; 2026 ELEV8 DIGITAL. All rights reserved.</div>
+      <div class="text-[11px] text-slate-500 font-medium">Elevate Your Digital Presence &bull; Web Development &bull; Software &bull; AI Solutions</div>
+      <div>Contact: <a href="mailto:lowensweb@gmail.com" class="text-emerald-400">lowensweb@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

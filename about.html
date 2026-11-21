@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Team | ELEV8 DIGITAL</title>
+  <meta name="description" content="Meet our team at ELEV8 DIGITAL. Elevate Your Digital Presence with custom web development, software, and AI solutions.">
+  
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              emerald: '#059669',
+              dark: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white text-slate-900 antialiased selection:bg-emerald-100 selection:text-emerald-900">
+
+  <!-- ========================================================================
+       TOP HEADER / NAV
+       ======================================================================== -->
+  <header class="sticky-nav fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <img 
+            src="assets/logo.png" 
+            alt="ELEV8 DIGITAL Emblem" 
+            class="h-12 w-12 sm:h-14 sm:w-14 object-contain transition-transform duration-200 group-hover:scale-105"
+          >
+          <div class="flex flex-col">
+            <span
+              class="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 leading-none group-hover:text-emerald-700 transition-colors">
+              ELEV<span class="text-emerald-600">8</span> DIGITAL
+            </span>
+            <span class="text-[10px] sm:text-[11px] uppercase font-semibold text-slate-600 tracking-wider mt-1">
+              Web Development &bull; Software &bull; AI Solutions
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html#home"
+            class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Home</a>
+          <a href="about.html" class="text-sm font-bold text-emerald-700 border-b-2 border-emerald-600 pb-0.5">About
+            Me</a>
+          <a href="index.html#our-work"
+            class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Our Work</a>
+          <a href="index.html#pricing"
+            class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Packages</a>
+        </nav>
+
+        <!-- CTA in header -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="index.html#intake-form" class="btn-primary text-sm px-5 py-2.5 shadow-sm">
+            <span>Start a Project</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-btn" type="button"
+            class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Slide-out Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl">
+      <div class="flex flex-col space-y-3">
+        <a href="index.html#home"
+          class="px-3 py-2 text-base font-medium text-slate-800 rounded-md hover:bg-emerald-50">Home</a>
+        <a href="about.html" class="px-3 py-2 text-base font-bold text-emerald-700 rounded-md bg-emerald-50">About
+          Me</a>
+        <a href="index.html#our-work"
+          class="px-3 py-2 text-base font-medium text-slate-800 rounded-md hover:bg-emerald-50">Our Work</a>
+        <a href="index.html#pricing"
+          class="px-3 py-2 text-base font-medium text-slate-800 rounded-md hover:bg-emerald-50">Packages</a>
+        <div class="pt-3 border-t border-slate-100">
+          <a href="index.html#intake-form" class="btn-primary w-full text-center py-3">
+            <span>Get Started &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="h-20"></div>
+
+  <!-- ========================================================================
+       MAIN ABOUT ME SECTION / CONTENT BLOCKS
+       ======================================================================== -->
+  <main class="py-16 md:py-24 bg-gradient-to-b from-emerald-50/30 via-white to-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Page Header -->
+      <div class="text-center space-y-4 mb-16">
+        <span class="badge-light-green">
+          <i data-lucide="users" class="w-3.5 h-3.5 text-emerald-600"></i>
+          The Team Behind ELEV8 DIGITAL
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Meet Our Team
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          Learn about the dedicated team at ELEV8 DIGITAL, committed to elevating your digital presence with modern web development, software, and AI solutions.
+        </p>
+      </div>
+
+      <!-- Founder & Management Team Hero Intro Card -->
+      <div class="bg-white p-8 sm:p-12 rounded-2xl border border-slate-200 shadow-xl mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+
+          <div class="md:col-span-5 text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+              <!-- Team Member 1: Langston (Interactive 3D Flip Card) -->
+              <div class="flip-card-perspective min-h-[440px]">
+                <div 
+                  class="flip-card-inner rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  tabindex="0"
+                  role="button"
+                  aria-expanded="false"
+                  aria-label="Langston's card. Click or press Enter to flip for bio details"
+                  data-team-card
+                >
+                  <!-- FRONT FACE -->
+                  <div class="flip-card-front rounded-2xl p-2.5 bg-gradient-to-b from-slate-50 to-white subtle-border shadow-md transition-shadow duration-300 hover:shadow-xl hover:border-emerald-200 flex flex-col justify-between group">
+                    <div>
+                      <div class="relative w-full aspect-[3/4] max-h-[260px] sm:max-h-[280px] mx-auto rounded-xl overflow-hidden subtle-border shadow-xs mb-2.5">
+                        <img 
+                          src="assets/langston.jpg" 
+                          alt="Langston - Founder &amp; Principal Developer of ELEV8 DIGITAL" 
+                          class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                        >
+                        <div class="absolute bottom-2 right-2 bg-white/95 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-slate-700 flex items-center gap-1 shadow-xs border border-slate-200/80">
+                          <i data-lucide="rotate-cw" class="w-2.5 h-2.5 text-emerald-600"></i>
+                          <span>Flip</span>
+                        </div>
+                      </div>
+                      <div class="px-1 space-y-0.5">
+                        <h3 class="text-sm font-extrabold text-slate-900 leading-tight">Langston</h3>
+                        <p class="text-[10px] font-semibold text-emerald-700 leading-snug">Founder &amp; Principal Developer</p>
+                      </div>
+                    </div>
+                    <div class="mt-2 pt-2 border-t border-slate-100 px-1 text-[10px] text-slate-600 font-medium flex items-center">
+                      <span class="flex items-center gap-1"><i data-lucide="code" class="w-3 h-3 text-emerald-600"></i>Engineering &amp; Design</span>
+                    </div>
+                  </div>
+
+                  <!-- BACK FACE -->
+                  <div class="flip-card-back rounded-2xl p-3.5 bg-gradient-to-b from-white via-slate-50 to-emerald-50/40 subtle-border shadow-md border-emerald-200 flex flex-col justify-between">
+                    <div class="space-y-2">
+                      <div class="flex items-center justify-between pb-1.5 border-b border-slate-100">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100/80 text-emerald-800 text-[9px] font-extrabold uppercase">
+                          <i data-lucide="terminal" class="w-2.5 h-2.5 text-emerald-700"></i>
+                          The Builder &amp; Coder
+                        </span>
+                        <div class="w-5 h-5 rounded-full bg-slate-100 hover:bg-emerald-100 text-slate-500 hover:text-emerald-700 flex items-center justify-center transition-colors">
+                          <i data-lucide="rotate-ccw" class="w-2.5 h-2.5"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 class="font-extrabold text-slate-900 text-xs">The Builder, Coder &amp; Developer</h4>
+                        <p class="text-[9px] font-semibold text-emerald-700">Langston &bull; Founder</p>
+                      </div>
+                      <p class="text-[11px] text-slate-600 leading-relaxed">
+                        I'm the developer and coder on our team building your website from the ground up. Our mission is simple: we build better, cleaner, faster, and more modern websites for less money. By cutting out bloated agency markups and overcomplicated processes, we make sure your business gets high-quality, custom work built to perform—at a fairer price with direct 1-on-1 communication every step of the way.
+                      </p>
+                      <!-- Key Advantages -->
+                      <div class="space-y-1 pt-1 text-[10px] text-slate-700 font-medium">
+                        <div class="flex items-center gap-1.5">
+                          <i data-lucide="check" class="w-3 h-3 text-emerald-600 shrink-0"></i>
+                          <span>Direct 1-on-1 communication</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <i data-lucide="check" class="w-3 h-3 text-emerald-600 shrink-0"></i>
+                          <span>100% Custom code from scratch</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <i data-lucide="check" class="w-3 h-3 text-emerald-600 shrink-0"></i>
+                          <span>No bloated agency retainers</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pt-1.5 border-t border-slate-100 text-center text-[9px] font-semibold text-emerald-700">
+                      Click to flip back &circlearrowleft;
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Team Member 2: Dimitry Gioldasis (Interactive 3D Flip Card) -->
+              <div class="flip-card-perspective min-h-[440px]">
+                <div 
+                  class="flip-card-inner rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  tabindex="0"
+                  role="button"
+                  aria-expanded="false"
+                  aria-label="Dimitry Gioldasis's card. Click or press Enter to flip for bio details"
+                  data-team-card
+                >
+                  <!-- FRONT FACE -->
+                  <div class="flip-card-front rounded-2xl p-2.5 bg-gradient-to-b from-slate-50 to-white subtle-border shadow-md transition-shadow duration-300 hover:shadow-xl hover:border-emerald-200 flex flex-col justify-between group">
+                    <div>
+                      <div class="relative w-full aspect-[3/4] max-h-[260px] sm:max-h-[280px] mx-auto rounded-xl overflow-hidden subtle-border shadow-xs mb-2.5">
+                        <img 
+                          src="assets/dimitry.jpg" 
+                          alt="Dimitry Gioldasis - Sales &amp; Management at ELEV8 DIGITAL" 
+                          class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                        >
+                        <div class="absolute bottom-2 right-2 bg-white/95 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-bold text-slate-700 flex items-center gap-1 shadow-xs border border-slate-200/80">
+                          <i data-lucide="rotate-cw" class="w-2.5 h-2.5 text-emerald-600"></i>
+                          <span>Flip</span>
+                        </div>
+                      </div>
+                      <div class="px-1 space-y-0.5">
+                        <h3 class="text-sm font-extrabold text-slate-900 leading-tight">Dimitry Gioldasis</h3>
+                        <p class="text-[10px] font-semibold text-emerald-700 leading-snug">Sales &amp; Client Management</p>
+                      </div>
+                    </div>
+                    <div class="mt-2 pt-2 border-t border-slate-100 px-1 text-[10px] text-slate-600 font-medium flex items-center">
+                      <span class="flex items-center gap-1"><i data-lucide="briefcase" class="w-3 h-3 text-emerald-600"></i>Sales &amp; Client Management</span>
+                    </div>
+                  </div>
+
+                  <!-- BACK FACE -->
+                  <div class="flip-card-back rounded-2xl p-3.5 bg-gradient-to-b from-white via-slate-50 to-emerald-50/40 subtle-border shadow-md border-emerald-200 flex flex-col justify-between">
+                    <div class="space-y-2">
+                      <div class="flex items-center justify-between pb-1.5 border-b border-slate-100">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100/80 text-emerald-800 text-[9px] font-extrabold uppercase">
+                          <i data-lucide="trending-up" class="w-2.5 h-2.5 text-emerald-700"></i>
+                          The Closer &amp; Pitcher
+                        </span>
+                        <div class="w-5 h-5 rounded-full bg-slate-100 hover:bg-emerald-100 text-slate-500 hover:text-emerald-700 flex items-center justify-center transition-colors">
+                          <i data-lucide="rotate-ccw" class="w-2.5 h-2.5"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 class="font-extrabold text-slate-900 text-xs">The Closer, Pitcher &amp; Client Lead</h4>
+                        <p class="text-[9px] font-semibold text-emerald-700">Dimitry Gioldasis &bull; Sales</p>
+                      </div>
+                      <p class="text-[11px] text-slate-600 leading-relaxed">
+                        Dimitry is the sales guy and pitcher—the one out there connecting with business owners, pitching the vision, and starting real, honest conversations. He helps clients see what's possible for their online presence while keeping communication straightforward and personal.
+                      </p>
+                    </div>
+                    <div class="pt-1.5 border-t border-slate-100 text-center text-[9px] font-semibold text-emerald-700">
+                      Click to flip back &circlearrowleft;
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-center">
+              <a href="mailto:lowensweb@gmail.com"
+                class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-200 hover:bg-emerald-100 transition-colors">
+                lowensweb@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="md:col-span-7 space-y-4">
+            <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-700">A Personal Welcome</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
+              Building websites that don't just look pretty, but actually bring in paying customers.
+            </h2>
+            <p class="text-slate-600 text-base leading-relaxed">
+              Welcome to ELEV8 DIGITAL. We founded this team because we witnessed too many incredible local businesses, contractors, service specialists, and entrepreneurs lose revenue simply because their digital footprint was either non-existent or stuck in the 2000s.
+            </p>
+            <p class="text-slate-600 text-base leading-relaxed">
+              When someone needs a service in your city, the very first thing they do is search online. If they don't find a credible, fast, and modern website, they immediately click the next competitor on the list. Our mission is to make sure your business is the one they call first.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Structured Designated Content Blocks -->
+      <div class="space-y-8">
+
+        <!-- Block 1: Our Background -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Our Background</h3>
+              <span class="text-xs text-emerald-700 font-semibold uppercase tracking-wider">ELEV8 DIGITAL</span>
+            </div>
+          </div>
+          <div class="space-y-3 text-slate-600 text-sm sm:text-base leading-relaxed pt-1">
+            <p>
+              We started ELEV8 DIGITAL with a simple idea: businesses of all sizes deserve a strong, modern online presence without the high costs and complications that often come with traditional web development agencies.
+            </p>
+            <p>
+              With Langston leading custom software engineering and Dimitry spearheading client relations and strategy, we combine tailored design with clean, hand-crafted code to help businesses attract customers and build digital authority.
+            </p>
+          </div>
+        </div>
+
+        <!-- Block 2: Our Mission -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Our Mission</h3>
+              <span class="text-xs text-emerald-700 font-semibold uppercase tracking-wider">Lasting First Impressions</span>
+            </div>
+          </div>
+          <div class="space-y-3 text-slate-600 text-sm sm:text-base leading-relaxed pt-1">
+            <p>
+              Our mission is to help businesses make a lasting first impression online. A website should be more than just a digital business card; it must build credibility, connect with customers, and drive real growth.
+            </p>
+            <p>
+              We focus on building websites that are fast, mobile-friendly, and easy to navigate—tailored specifically to reflect the genuine business behind them.
+            </p>
+          </div>
+        </div>
+
+        <!-- Block 3: The Dedicated Team Advantage -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">The Dedicated Team Advantage</h3>
+              <span class="text-xs text-emerald-700 font-semibold uppercase tracking-wider">Direct Collaboration</span>
+            </div>
+          </div>
+          <div class="space-y-3 text-slate-600 text-sm sm:text-base leading-relaxed pt-1">
+            <p>
+              When you work with ELEV8 DIGITAL, you work directly with the dedicated team building and managing your website. From the initial conversation to the final launch, we handle every stage personally.
+            </p>
+            <p>
+              No middlemen, no unnecessary layers, and no one-size-fits-all solutions. Just direct communication, thoughtful development, and a commitment to delivering a website that meets your business's goals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Block 4: Why Work With Us Directly? -->
+        <div class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white p-8 sm:p-10 rounded-2xl shadow-xl space-y-4">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-300">Direct Team Collaboration</span>
+          <h3 class="text-2xl sm:text-3xl font-bold">The Advantage of Working Directly With Our Team</h3>
+          <p class="text-emerald-100 text-sm sm:text-base leading-relaxed max-w-3xl">
+            When you hire ELEV8 DIGITAL, you don't get routed to an offshore contractor or a disconnected account representative. You get direct access, honest communication, and our undivided attention throughout the entire project.
+          </p>
+          <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
+            <a href="index.html#intake-form"
+              class="bg-white text-emerald-900 hover:bg-emerald-50 font-bold text-sm px-8 py-3.5 rounded-full shadow-lg transition-all w-full sm:w-auto text-center">
+              Fill Out The Project Intake Form &rarr;
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lowensweb@gmail.com&su=Website%20Inquiry%20for%20ELEV8%20DIGITAL&body=Hi%20Langston%20%26%20Dimitry%2C%0A%0AI'd%20love%20to%20learn%20more%20about%20getting%20a%20website%20built%20for%20my%20business.%0A%0ABusiness%20Name%3A%20%0AWhat%20we%20do%3A%20%0AGoals%20%2F%20What%20we're%20looking%20for%3A%20%0ABest%20way%20to%20reach%20me%3A%20"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white hover:text-emerald-200 font-semibold text-sm flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              Email Our Team Directly (Gmail / Mail)
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold">
+            8
+          </div>
+          <span class="font-bold text-lg text-white">ELEV8 DIGITAL</span>
+        </div>
+        <div class="text-sm text-slate-400">
+          Direct email: <a href="mailto:lowensweb@gmail.com"
+            class="text-emerald-400 hover:underline">lowensweb@gmail.com</a>
+        </div>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="index.html#home" class="hover:text-emerald-400">Home</a>
+          <a href="about.html" class="text-emerald-400">About Me</a>
+          <a href="index.html#our-work" class="hover:text-emerald-400">Our Work</a>
+          <a href="index.html#intake-form" class="hover:text-emerald-400">Intake Form</a>
+        </div>
+      </div>
+      <div class="pt-8 text-center text-xs text-slate-500 space-y-1">
+        <div>&copy; 2026 ELEV8 DIGITAL. All rights reserved.</div>
+        <div class="text-[11px] text-slate-500 font-medium">Elevate Your Digital Presence &bull; Web Development &bull; Software &bull; AI Solutions</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // 3D Team Card Flip Logic
+    const teamCards = document.querySelectorAll('[data-team-card]');
+    teamCards.forEach(card => {
+      const toggleCard = (e) => {
+        if (e.target.closest('a')) return;
+        const isFlipped = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-expanded', isFlipped ? 'true' : 'false');
+      };
+      card.addEventListener('click', toggleCard);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleCard(e);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
