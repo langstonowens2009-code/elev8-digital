@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Visual feedback on button
       if (submitBtn) submitBtn.disabled = true;
-      if (submitBtnText) submitBtnText.textContent = 'Routing to Langston...';
+      if (submitBtnText) submitBtnText.textContent = 'Routing to Langston Owens...';
       if (submitSpinner) submitSpinner.classList.remove('hidden');
 
       // Prepare payload
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Business:</strong> ${escapeHtml(businessName)}</p>
                 <p><strong>Contact:</strong> ${escapeHtml(contactName)} (${escapeHtml(email)})</p>
                 <p class="text-xs text-slate-500 pt-2 border-t border-amber-200">
-                  Langston can also be emailed directly at <strong>lowensweb@gmail.com</strong>.
+                  Langston Owens can also be emailed directly at <strong>lowensweb@gmail.com</strong>.
                 </p>
               </div>
             `;
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <p><strong>Contact:</strong> ${escapeHtml(contactName)} (${escapeHtml(email)})</p>
               <p><strong>Status:</strong> ${escapeHtml(websiteStatus)}</p>
               <p class="text-xs text-slate-500 pt-2 border-t border-emerald-200">
-                A copy has been prepped for <strong>lowensweb@gmail.com</strong>. Langston will review and email you within 48 hours.
+                A copy has been prepped for <strong>lowensweb@gmail.com</strong>. Langston Owens will review and email you within 48 hours.
               </p>
             </div>
           `;

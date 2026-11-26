@@ -11,7 +11,7 @@ This repository contains the complete production-ready source code for **ELEV8vx
 
 ### Included Features & Architecture:
 1. **Interactive Team 3D Flip Cards:**
-   - Featuring **Langston** (Founder & Principal Developer — *Engineering & Design*) and **Dimitry Gioldasis** (Sales & Client Management).
+   - Featuring **Langston Owens** (Founder & Principal Developer — *Engineering & Design*) and **Dimitry Gioldasis** (Sales & Client Management).
    - Smooth 3D card flip transitions with keyboard accessibility and mobile-optimized responsive layout.
 
 2. **Project Intake Architecture & Form Submission:**
